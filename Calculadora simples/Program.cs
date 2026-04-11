@@ -6,13 +6,21 @@ using System.ComponentModel.Design;
 void calculadora()
 {
     Console.WriteLine("Digite o primeiro numero");
-    double num1 = Convert.ToDouble(Console.ReadLine()); //! para dizer que não é nulo, ou seja, o usuário tem que digitar um numero
+    if (!double.TryParse(Console.ReadLine(), out double num1)) //verificar se a entrada é um numero valido
+    {
+        Console.WriteLine("Entrada inválida.");
+        return;
+    } 
 
-    Console.WriteLine("Escolha uma operação: +, -, *, /");
-    string operacao = Console.ReadLine()!;
+    Console.WriteLine("Escolha uma operação: +, -, *, /"); //pedir para o usuario escolher a operação
+    string operacao = Console.ReadLine()!; 
 
     Console.WriteLine("Digite o segundo numero");
-    double num2 = Convert.ToDouble(Console.ReadLine());
+    if (!double.TryParse(Console.ReadLine(), out double num2)) //verificar se a entrada é um numero valido
+    {
+        Console.WriteLine("Entrada inválida.");
+        return;
+    }
 
     switch (operacao) //switch para escolher a operação
     {
@@ -37,7 +45,7 @@ void calculadora()
             break;
 
         default:
-            Console.WriteLine("Operação invalida");
+            Console.WriteLine("Operação invalida"); //caso o usuario digite uma operação invalida
             break;
 
     }
