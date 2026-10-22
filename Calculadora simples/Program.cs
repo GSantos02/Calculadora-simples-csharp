@@ -6,23 +6,23 @@ using System.ComponentModel.Design;
 void calculadora()
 {
     Console.WriteLine("Digite o primeiro numero");
-    if (!double.TryParse(Console.ReadLine(), out double num1)) //verificar se a entrada é um numero valido
+    if (!double.TryParse(Console.ReadLine(), out double num1)) 
     {
         Console.WriteLine("Entrada inválida.");
         return;
     } 
 
-    Console.WriteLine("Escolha uma operação: +, -, *, /"); //pedir para o usuario escolher a operação
+    Console.WriteLine("Escolha uma operação: +, -, *, /"); 
     string operacao = Console.ReadLine()!; 
 
     Console.WriteLine("Digite o segundo numero");
-    if (!double.TryParse(Console.ReadLine(), out double num2)) //verificar se a entrada é um numero valido
+    if (!double.TryParse(Console.ReadLine(), out double num2)) 
     {
         Console.WriteLine("Entrada inválida.");
         return;
     }
 
-    switch (operacao) //switch para escolher a operação
+    switch (operacao) 
     {
         case "+":
             Console.WriteLine($"O resultado é: {num1 + num2}");
@@ -34,7 +34,7 @@ void calculadora()
             Console.WriteLine($"O resultado é: {num1 * num2}");
             break;
         case "/":
-            if (num2 == 0) //verificar se o segundo numero é 0 para evitar divisão por zero
+            if (num2 == 0) 
             {
                 Console.WriteLine("Operação invalida com 0");
             }
@@ -45,7 +45,7 @@ void calculadora()
             break;
 
         default:
-            Console.WriteLine("Operação invalida"); //caso o usuario digite uma operação invalida
+            Console.WriteLine("Operação invalida"); 
             break;
 
     }
